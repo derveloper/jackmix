@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 
 import re
 import os.path
@@ -77,7 +77,7 @@ def GetAppVersion( context, app, version ):
 
 	context.Message( "Checking if the output of '%s' contains '%s' " % (app,version) )
 
-	out = os.popen3( app )
+	out = os.popen( app )
 	#print out[1] + out[2]
 	str = out[1].read() + out[2].read()
 
