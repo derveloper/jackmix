@@ -90,7 +90,7 @@ def GetAppVersion( context, app, version ):
 	return ret
 
 def generate( env ):
-	print "Configuring qt5muc..."
+	print("Configuring qt5muc...")
 
 	conf = env.Configure( custom_tests = { 'GetAppVersion' : GetAppVersion } )
 
@@ -115,7 +115,7 @@ def generate( env ):
 		env.Exit( 1 )
 
 	env = conf.Finish()
-	print "Done. Will define a more or less automatic environment to do all the qt-specific stuff."
+	print("Done. Will define a more or less automatic environment to do all the qt-specific stuff.")
 
 	moc = SCons.Builder.Builder( action="%s $SOURCES > $TARGET" % moc, suffix='.moc', src_suffix='.h'   )
 	uic = SCons.Builder.Builder( action="%s $SOURCES > $TARGET" % uic, suffix='.h',   src_suffix='.ui'  )
